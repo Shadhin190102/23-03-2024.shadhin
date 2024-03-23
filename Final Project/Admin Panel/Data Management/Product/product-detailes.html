@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+   body{
+            margin: 0px;
+            height: 0px;
+            background-color: rgb(250, 247, 247);
+
+        }
+        .nav1{
+
+            background-color: rgb(235, 222, 222);
+            
+            width: 100%;
+          
+            margin: 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+        }
+        .nav-left-1 a{
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgb(243, 237, 237);
+            
+            font-size: 35px;
+        }
+
+        .nav-left a{
+            font-weight: bold;
+            color: rgb(142, 139, 139);
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .nav-left a:hover {
+            font-weight: bold;
+            color: rgb(84, 78, 78);
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+    .product-details {
+      max-width: 80%;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .product-photo {
+      max-width: 15%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .details-list li {
+      margin-bottom: 10px;
+    }
+
+    .Edit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      left:77%; 
+      top: 19%;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav1">
+    <div class="nav-left"><a href="/Admin Panel/Dash-Board-panel.html">Desh Board</a></div>
+    <div class="nav-left"><a href="/Admin Panel/Data Management/Product/product.html">Product</a></div>
+    <div class="nav-left"><a href="/Admin Panel/Data Management/create-id-home.html">Home</a></div>
+  </div>
+  <button class="Edit-btn" onclick="document.location='product-edite.html'">Edit</button>
+  <div class="product-details">
+    
+    <img class="product-photo" src="/Admin Panel/Data Management/Product/Image/123.jpg" alt="Product Photo">
+    <ul class="details-list">
+        <li><strong>Product Id:</strong> 67865</li>
+      <li><strong>Product Name:</strong> Product A</li>
+      <li><strong>Weight:</strong> 500g</li>
+      <li><strong>Material:</strong> Material A, Material B, Material C</li>
+      <li><strong>Disease:</strong> Disease X, Disease Y, Disease Z</li>
+      <li><strong>Age:</strong> Suitable for all ages</li>
+      <li><strong>Company Name:</strong> Company X</li>
+      <li><strong>Product Type:</strong> Type A</li>
+      <li><strong>Price:</strong> $50.00</li>
+      <li><strong>Discount:</strong> 10%</li>
+      <li><strong>Publication Date:</strong> January 1, 2024</li>
+    </ul>
+   
+  </div>
+</body>
+</html>

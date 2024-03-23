@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple Table Data</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Table 1</h2>
+    <table id="table1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td><a href="#" class="table-link">Link 1</a></td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td><a href="#" class="table-link">Link 2</a></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Table 2</h2>
+    <table id="table2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td><a href="#" class="table-link">Link 1</a></td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td><a href="#" class="table-link">Link 2</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Get all table links
+    var tableLinks = document.querySelectorAll('.table-link');
+
+    // Loop through each link and add event listener
+    tableLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default behavior of links
+
+            // Get the URL from the link's href attribute
+            var url = this.getAttribute('href');
+
+            // Open the URL in the same page
+            window.location.href = url;
+        });
+    });
+</script>
+</body>
+</html>

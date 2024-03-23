@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-option Selector</title>
+<style>
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .options {
+    margin-bottom: 20px;
+  }
+  .details-bar {
+    display: none;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Select Options</h2>
+  <div class="options">
+    <label for="type1">Choose a Type 1:</label>
+    <select id="type1" onchange="showDetails('type1')">
+      <option value="">Select...</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <div class="details-bar" id="detailsBar1"></div>
+  </div>
+  <div class="options">
+    <label for="type2">Choose a Type 2:</label>
+    <select id="type2" onchange="showDetails('type2')">
+      <option value="">Select...</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <div class="details-bar" id="detailsBar2"></div>
+  </div>
+</div>
+<script>
+  // Function to show details based on selected options
+  function showDetails(type) {
+    var selectedOption = document.getElementById(type).value;
+    var detailsBar = document.getElementById('detailsBar' + type.slice(-1));
+    
+    // Clear previous content
+    detailsBar.innerHTML = '';
+    
+    if (selectedOption) {
+      var selectedOptionText = document.getElementById(type).options[document.getElementById(type).selectedIndex].text;
+      detailsBar.style.display = 'block';
+      detailsBar.innerHTML = '<strong>Selected Option:</strong> ' + selectedOptionText;
+    } else {
+      detailsBar.style.display = 'none';
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Report</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Inventory Report</h2>
+    <form id="inventoryForm">
+        <label for="companyId">Company ID: 67655</label>
+       <Div>8976</Div>
+
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName">
+
+        <label for="dateFrom">From:</label>
+        <input type="date" id="dateFrom" name="dateFrom">
+
+        <label for="dateTo">To:</label>
+        <input type="date" id="dateTo" name="dateTo">
+
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName">
+
+        <label for="itemId">Item ID:</label>
+        <input type="text" id="itemId" name="itemId">
+
+        <label for="itemAge">Item Age:</label>
+        <input type="text" id="itemAge" name="itemAge">
+
+        <label for="itemType">Item Type:</label>
+        <input type="text" id="itemType" name="itemType">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Display submitted data -->
+    <div id="displayData"></div>
+</div>
+
+<script>
+    // Get form element
+    var form = document.getElementById('inventoryForm');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Get form data
+        var formData = new FormData(form);
+
+        // Convert form data to object
+        var data = {};
+        formData.forEach(function(value, key) {
+            data[key] = value;
+        });
+
+        // Display submitted data
+        displayData(data);
+    });
+
+    // Function to display submitted data
+    function displayData(data) {
+        var displayDiv = document.getElementById('displayData');
+        displayDiv.innerHTML = '<h3>Submitted Data:</h3>';
+        displayDiv.innerHTML += '<p><strong>Company ID:</strong> ' + data.companyId + '</p>';
+        displayDiv.innerHTML += '<p><strong>Company Name:</strong> ' + data.companyName + '</p>';
+        displayDiv.innerHTML += '<p><strong>Date Range:</strong> ' + data.dateFrom + ' to ' + data.dateTo + '</p>';
+        displayDiv.innerHTML += '<p><strong>Item Name:</strong> ' + data.itemName + '</p>';
+        displayDiv.innerHTML += '<p><strong>Item ID:</strong> ' + data.itemId + '</p>';
+        displayDiv.innerHTML += '<p><strong>Item Age:</strong> ' + data.itemAge + '</p>';
+        displayDiv.innerHTML += '<p><strong>Item Type:</strong> ' + data.itemType + '</p>';
+    }
+</script>
+</body>
+</html>
